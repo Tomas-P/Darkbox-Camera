@@ -8,6 +8,7 @@ light = LED(26, False)
 
 def capture(fname):
     light.on()
+    sleep(5)
     camera.capture(fname)
     light.off()
 
@@ -56,7 +57,7 @@ def timelapse(repeat_number, delay, file_key_word):
         n = "{0}_{1}.jpg".format(z, x)
         capture(n)
         x = x + 1
-        sleep(delay)
+        sleep(delay - 5)
         
 def long_timelapse(repeats, Ldelay, file_key_word):
     '''(int, number) -> NoneType
